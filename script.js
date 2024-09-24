@@ -2,7 +2,7 @@ let timer = document.getElementById("timer");
 
 let workingTime = true;  //boolean that indicates if it's work time or not
 
-let customizedWorkingTime = 1 ;  //working time, which can be changed in the parameters
+let customizedWorkingTime = 25 ;  //working time, which can be changed in the parameters
 let customizedBreakingTime = 5 ;  //breaking time, which can be changed in the parameters
 
 let time = customizedWorkingTime * 60 - 1;  //defines the time in seconds, whether it's work or break time
