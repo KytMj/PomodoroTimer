@@ -7,11 +7,12 @@ body{
 
 .pomodoro{
     padding: 2em;
+    padding-top:0;
     background-color: #bf0603;
     flex: 1;
     border: 3px solid #8d0801;
-    margin-left:3vw;
-    margin-right:3vw;
+    margin-left:4vw;
+    margin-right:4vw;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -30,6 +31,7 @@ body{
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: normal;
+    width:40vw;
     
 }
 
@@ -58,10 +60,12 @@ body{
     border: 2px solid #ffeedd;
     color: #ffeedd;
     font-size: 3vw;
-    width: 1vw;
     cursor: pointer;
     aspect-ratio: 1/1;
     width:6vw;
+    box-shadow: 4px 2px 2px rgb(113, 18, 18);
+    margin-left:1vw;
+    margin-right:1vw;
 }
 
 h1{
@@ -72,7 +76,6 @@ h1{
 }
 
 #timer{
-
     position: relative;
     width: 100%;
     height: 100%;
@@ -96,9 +99,12 @@ h1{
     width: 20vw;
     height: 20vw;
     padding:2.5vw;
-    margin-top: 2%;
+    margin-top: 2vw;
+    margin-bottom:1vw;
     border: 0.4em solid #ffeedd;
     border-radius: 100%;
+    box-shadow: 5px 5px 15px rgb(113, 18, 18);
+    
 }
 
 
@@ -112,19 +118,29 @@ h1{
         font-size: 8vw;
     }
 
+    #containerTimer{
+    padding:10vw;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    }
+
     .travail{
-        flex: auto;
-        font-size: 4vw;
+        font-size: 5vw;
     }
     
     .pause{
-        flex: auto;
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
     .pomodoro{
         margin:0;
     }
+
+    #start, #parametre{
+        font-size: 6vw;
+        width:12vw;
+    }
+
 }
 
 /* The Modal (background) */
