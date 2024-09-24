@@ -1,31 +1,32 @@
-let timer = document.getElementById("timer");
+let timer = document.getElementById("timer");  
 
-let workingTime = true;
+let workingTime = true;  //boolean that indicates if it's work time or not
 
-let customizedBreakTime = 5 ;
-let customizedWorkingTime = 1 ;
+let customizedWorkingTime = 1 ;  //working time, which can be changed in the parameters
+let customizedBreakingTime = 5 ;  //breaking time, which can be changed in the parameters
 
-let time = customizedWorkingTime * 60 - 1;
-timer.innerText = `${customizedWorkingTime}:00`
+let time = customizedWorkingTime * 60 - 1;  //defines the time in seconds, whether it's work or break time
+timer.innerText = customizedWorkingTime < 10 ? "0" + `${customizedWorkingTime}:00` : `${customizedWorkingTime}:00`;
 
-let buttonRestart = false;
-let interval;
+let buttonRestart = false;  //boolean that indicates if it's the start or the restart button
+let interval;  //variable for setInterval and clearInterval
 
+//checks the button to see if it needs to start the timer
 function startAndStop(){
-    if(buttonRestart == false){
-        time = workingTime ? customizedWorkingTime * 60 - 1: customizedBreakTime * 60 - 1;
-        interval = setInterval(decreaseTime, 1000);
-        buttonRestart = true;
-        document.getElementById("classButton").className = "fa-solid fa-rotate-left";
+    if(buttonRestart == false){ //checks whether the button is the start or restart button
+        time = workingTime ? customizedWorkingTime * 60 - 1: customizedBreakingTime * 60 - 1;   // determines whether it's work time or break time
+        interval = setInterval(decreaseTime, 1000); //starts the timer
+        buttonRestart = true; 
+        document.getElementById("classButton").className = "fa-solid fa-rotate-left";  //changes the style of the button (becomes the restart button)
     }
     else{
-        clearInterval(interval);
-        timer.innerText = `${customizedWorkingTime}:00`;
-        // Remettre le compteur à 0 et on recommence sur la partie travail
+        clearInterval(interval);  //stop the timer
+        timer.innerText = customizedWorkingTime < 10 ? "0" + `${customizedWorkingTime}:00` : `${customizedWorkingTime}:00`;  //reset the timer
+
         workingTime = true;
         time = customizedWorkingTime * 60 - 1;
         buttonRestart = false;
-        document.getElementById("classButton").className = "fa-solid fa-play";
+        document.getElementById("classButton").className = "fa-solid fa-play";  //changes the style of the button (becomes the start button)
     }
     changeColor();
 }
@@ -41,7 +42,7 @@ function decreaseTime(){
     timer.innerText = `${minutes}:${seconds}`;
     if(time <= 0){
         workingTime ? workingTime = false : workingTime = true;
-        time = workingTime ? customizedWorkingTime * 60 : customizedBreakTime * 60 ;
+        time = workingTime ? customizedWorkingTime * 60 : customizedBreakingTime * 60 ;
     }
     else{
         time = time - 1;
@@ -50,23 +51,18 @@ function decreaseTime(){
 
 function changeColor(){
     if(workingTime == true){
-        document.getElementsByClassName("travail")[0].style.backgroundColor = 'orange';
-        document.getElementsByClassName("pause")[0].style.backgroundColor = 'red';
+        document.getElementsByClassName("work")[0].style.backgroundColor = 'rgb(180, 20, 12)';
+        document.getElementsByClassName("break")[0].style.backgroundColor = 'rgb(141, 8, 1)';
     }
     else{
-        document.getElementsByClassName("pause")[0].style.backgroundColor = 'blue';
-        document.getElementsByClassName("travail")[0].style.backgroundColor = 'red';
+        document.getElementsByClassName("work")[0].style.backgroundColor = 'rgb(141, 8, 1)';
+        document.getElementsByClassName("break")[0].style.backgroundColor = 'rgb(180, 20, 12)';
     }
 }
 
-// Get the modal
-var modal = document.getElementById("customizeTimeModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("parametre");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+let btn = document.getElementById("parameters");
+var modal = document.getElementById("customizeTimeModal");  // Get the modal
+var span = document.getElementsByClassName("close")[0];  // Get the <span> element that closes the modal
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
@@ -85,7 +81,9 @@ window.onclick = function(event) {
     }
 }
 
-function customizeTime(){
-    let valeur = document.getElementById("customizeWorkingTime").value;
-    console.log()
+function valueRecup() {
+    customizedWorkingTime = document.getElementById("formulary").elements["workTimeValue"].value;
+    customizedBreakingTime = document.getElementById("formulary").elements["breakTimeValue"].value;
+    timer.innerText = customizedWorkingTime < 10 ? "0" + `${customizedWorkingTime}:00` : `${customizedWorkingTime}:00`;
+    modal.style.display = "none";
 }

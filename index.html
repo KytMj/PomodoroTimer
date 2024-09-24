@@ -19,8 +19,8 @@
         <main class="pomodoro">
             <h1>Pomodoro Timer</h1>
             <div class="information">
-                <p class="travail">Travail</p>
-                <p class="pause">Pause</p>
+                <p class="work">Travail</p>
+                <p class="break">Pause</p>
             </div>
             <div id="containerTimer">
                 <div id="timer"></div>
@@ -29,7 +29,7 @@
                 <button id="start" onclick="startAndStop()">
                     <em id="classButton" class="fa-solid fa-play"></em>
                 </button>
-                <button id="parametre">
+                <button id="parameters">
                     <em class="fa-solid fa-gear"></em>
                 </button>
             </div>
@@ -37,13 +37,13 @@
             <div id="customizeTimeModal" class="modal">
                 <div class="modalContent">
                     <span class="close">&times;</span>
-                    <p>Some text in the Modal..</p>
-                    <form id="parameters" method="POST">
+                    <p>Modifiez les paramètres de temps du timer</p>
+                    <form id="formulary" method="POST">
                         <label for="customizeWorkingTime">Temps de travail (en minutes) : </label>
-                        <input type="number" id="customizeWorkingTime" name="workingTime" min="1" max="120" value="25"><br>
+                        <input type="number" id="customizeWorkingTime" min="1" max="99" value="25" name="workTimeValue"><br>
                         <label for="customizeBreakingTime">Temps de pause (en minutes) : </label>
-                        <input type="number" id="customizeBreakingTime" name="breakingTime" min="1" max="30" value="5"><br>
-                        <input type="submit" onclick="customizeTime()" value="Appliquer"> 
+                        <input type="number" id="customizeBreakingTime" min="1" max="30" value="5" name="breakTimeValue"><br>
+                        <input type="button" onclick="valueRecup()" value="Appliquer"> 
                     </form>
                 </div>
             </div>
