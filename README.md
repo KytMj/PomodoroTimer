@@ -6,4 +6,4 @@ Gestion simple d'un compte à rebours dissociant temps de travail et de pause.
 Cassandre Yon-Tailleux, TP1.2, 2A
 Maëlys Joret, TP1.2, 2A
 
-📝 https://KytMj.github.io/PomodoroTimer/
+📝 https://kytmj.github.io/PomodoroTimer/
