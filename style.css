@@ -1,40 +1,106 @@
 body{
-    background-color: rgb(212, 36, 36);
+    background-color: #ffeedd;
     text-align: center;
     color : rgb(238, 238, 238);
     display: flex;
-    align-items: flex-stretch;
 }
 
 .pomodoro{
     padding: 2em;
-    background-color: rgb(255, 19, 19);
+    background-color: #bf0603;
     flex: 1;
-    border: 3px solid #810e0e;
+    border: 3px solid #8d0801;
+    margin-left:3vw;
+    margin-right:3vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .information{
     display: flex;
+    background-color: #8d0801;
+    border-radius: 1vw;
+    margin-left: 15%;
+    margin-right: 15%;
+    box-shadow: 5px 5px 5px rgb(113, 18, 18);
+    font-size: 1.5vw;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    
 }
 
 .travail{
     flex: auto;
-    font-size: 1vw;
+    background-color: #b4140c;
+    margin:5px;
+    padding-top:1vw;
+    padding-bottom:1vw;
+    border-radius: 5px;
 }
 
 .pause{
     flex: auto;
-    font-size: 1vw;
-    
+    background-color: #8d0801;
+    margin:5px;
+    padding-top:1vw;
+    padding-bottom:1vw;
+    border-radius: 5px;
+}
+
+#start, #parametre{
+    display: inline-block;
+    background-color: #8d0801;
+    border-radius: 100%;
+    border: 2px solid #ffeedd;
+    color: #ffeedd;
+    font-size: 3vw;
+    width: 1vw;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    width:6vw;
 }
 
 h1{
     font-size: 4vw;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 #timer{
+
     position: relative;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffeedd;
+    font-size: 6vw;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
 }
+
+#containerTimer{
+
+    position: relative;
+    width: 20vw;
+    height: 20vw;
+    padding:2.5vw;
+    margin-top: 2%;
+    border: 0.4em solid #ffeedd;
+    border-radius: 100%;
+}
+
 
 
 @media screen and (max-width: 600px) {
@@ -43,7 +109,7 @@ h1{
     }
 
     #timer{
-        font-size: 10vw;
+        font-size: 8vw;
     }
 
     .travail{
@@ -54,6 +120,10 @@ h1{
     .pause{
         flex: auto;
         font-size: 4vw;
+    }
+
+    .pomodoro{
+        margin:0;
     }
 }
 

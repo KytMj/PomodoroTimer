@@ -7,6 +7,11 @@
 
         <script src="https://kit.fontawesome.com/0acb75a9e8.js" crossorigin="anonymous"></script>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
         <title>Pomodoro Timer</title>
     </head>
 
@@ -17,7 +22,9 @@
                 <p class="travail">Travail</p>
                 <p class="pause">Pause</p>
             </div>
-            <div id="timer"></div>
+            <div id="containerTimer">
+                <div id="timer"></div>
+            </div>
             <button id="start" onclick="startAndStop()">
                 <em id="classButton" class="fa-solid fa-play"></em>
             </button>
@@ -29,13 +36,12 @@
                 <div class="modalContent">
                     <span class="close">&times;</span>
                     <p>Some text in the Modal..</p>
-                    <form id="parameters">
+                    <form id="parameters" method="POST">
                         <label for="customizeWorkingTime">Temps de travail (en minutes) : </label>
-                        <input type="number" id="customizeWorkingTime" min="1" max="120" value="25"><br>
+                        <input type="number" id="customizeWorkingTime" name="workingTime" min="1" max="120" value="25"><br>
                         <label for="customizeBreakingTime">Temps de pause (en minutes) : </label>
-                        <input type="number" id="customizeBreakingTime" min="1" max="30" value="5"><br>
-                        <input type="button" onclick="customizeTime()" value="Appliquer">
-                        
+                        <input type="number" id="customizeBreakingTime" name="breakingTime" min="1" max="30" value="5"><br>
+                        <input type="submit" onclick="customizeTime()" value="Appliquer"> 
                     </form>
                 </div>
             </div>

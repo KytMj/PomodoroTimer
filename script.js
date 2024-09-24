@@ -86,6 +86,6 @@ window.onclick = function(event) {
 }
 
 function customizeTime(){
-    let resultat = document.getElementById("parameters");
-    console.log(resultat);
+    let valeur = document.getElementById("customizeWorkingTime").value;
+    console.log()
 }
