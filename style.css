@@ -2,12 +2,94 @@ body{
     background-color: rgb(212, 36, 36);
     text-align: center;
     color : rgb(238, 238, 238);
-    font-size: 4em;
+    display: flex;
+    align-items: flex-stretch;
 }
 
 .pomodoro{
+    padding: 2em;
     background-color: rgb(255, 19, 19);
-    position : fixed;
-    width: 300px;
+    flex: 1;
     border: 3px solid #810e0e;
+}
+
+.information{
+    display: flex;
+}
+
+.travail{
+    flex: auto;
+    font-size: 1vw;
+}
+
+.pause{
+    flex: auto;
+    font-size: 1vw;
+}
+
+h1{
+    font-size: 4vw;
+}
+
+#timer{
+    position: relative;
+}
+
+
+@media screen and (max-width: 600px) {
+    h1{
+        font-size: 8vw;
+    }
+
+    #timer{
+        font-size: 10vw;
+    }
+
+    .travail{
+        flex: auto;
+        font-size: 4vw;
+    }
+    
+    .pause{
+        flex: auto;
+        font-size: 4vw;
+    }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modalContent {
+    background-color: #ae1d1d;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #151313;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

@@ -11,10 +11,35 @@
     </head>
 
     <body>
-        <section class="pomodoro">
-            <div id="timer"> deco </div>
-            <button id="start" onclick="startAndStop()"><em id="classButton" class="fa-solid fa-play"></em></button>
-        </section>
+        <main class="pomodoro">
+            <h1>Pomodoro Timer</h1>
+            <div class="information">
+                <p class="travail">Travail</p>
+                <p class="pause">Pause</p>
+            </div>
+            <div id="timer"></div>
+            <button id="start" onclick="startAndStop()">
+                <em id="classButton" class="fa-solid fa-play"></em>
+            </button>
+            <button id="parametre">
+                <em class="fa-solid fa-gear"></em>
+            </button>
+
+            <div id="customizeTimeModal" class="modal">
+                <div class="modalContent">
+                    <span class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                    <form id="parameters">
+                        <label for="customizeWorkingTime">Temps de travail (en minutes) : </label>
+                        <input type="number" id="customizeWorkingTime" min="1" max="120" value="25"><br>
+                        <label for="customizeBreakingTime">Temps de pause (en minutes) : </label>
+                        <input type="number" id="customizeBreakingTime" min="1" max="30" value="5"><br>
+                        <input type="button" onclick="customizeTime()" value="Appliquer">
+                        
+                    </form>
+                </div>
+            </div>
+        </main>
 
         <script src="./script.js"></script>
     </body>
