@@ -161,9 +161,10 @@ h1{
 .modalContent {
     background-color: #ae1d1d;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    padding: 18px;
     border: 1px solid #888;
-    width: 40%; /* Could be more or less, depending on screen size */
+    width: 20%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
 }
 
 /* The Close Button */
@@ -172,6 +173,7 @@ h1{
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin: 2px;
 }
 
 .close:hover,
@@ -179,4 +181,18 @@ h1{
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.modal label{
+    font-family: "Poppins", sans-serif;
+    padding-right: 10px;
+}
+
+.modal p{
+    font-family: "Poppins", sans-serif;
+}
+
+.apply{
+    font-family: "Poppins", sans-serif;
+    margin: 1em;
 }

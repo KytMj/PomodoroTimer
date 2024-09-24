@@ -14,7 +14,7 @@ let interval;  //variable for setInterval and clearInterval
 //checks the button to see if it needs to start the timer
 function startAndStop(){
     if(buttonRestart == false){ //checks whether the button is the start or restart button
-        time = workingTime ? customizedWorkingTime * 60 - 1: customizedBreakingTime * 60 - 1;   // determines whether it's work time or break time
+        time = workingTime ? customizedWorkingTime * 60 - 1 : customizedBreakingTime * 60 - 1;   // determines whether it's work time or break time
         interval = setInterval(decreaseTime, 1000); //starts the timer
         buttonRestart = true; 
         document.getElementById("classButton").className = "fa-solid fa-rotate-left";  //changes the style of the button (becomes the restart button)
