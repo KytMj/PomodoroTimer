@@ -38,19 +38,19 @@ body{
 .travail{
     flex: auto;
     background-color: #b4140c;
-    margin:5px;
+    margin:7px;
     padding-top:1vw;
     padding-bottom:1vw;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .pause{
     flex: auto;
     background-color: #8d0801;
-    margin:5px;
+    margin:7px;
     padding-top:1vw;
     padding-bottom:1vw;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 #start, #parametre{
@@ -101,7 +101,7 @@ h1{
     padding:2.5vw;
     margin-top: 2vw;
     margin-bottom:1vw;
-    border: 0.4em solid #ffeedd;
+    border: 0.6em solid #ffeedd;
     border-radius: 100%;
     box-shadow: 5px 5px 15px rgb(113, 18, 18);
     

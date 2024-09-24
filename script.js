@@ -3,7 +3,7 @@ let timer = document.getElementById("timer");
 let workingTime = true;
 
 let customizedBreakTime = 5 ;
-let customizedWorkingTime = 0.1 ;
+let customizedWorkingTime = 1 ;
 
 let time = customizedWorkingTime * 60 - 1;
 timer.innerText = `${customizedWorkingTime}:00`
