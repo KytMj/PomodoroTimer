@@ -3,13 +3,31 @@ let timer = document.getElementById("timer");
 let workingTime = true;
 
 let customizedBreakTime = 5 ;
-let customizedWorkingTime = 0.1 ;
+let customizedWorkingTime = 1 ;
 
 let time = customizedWorkingTime * 60 - 1;
 timer.innerText = `${customizedWorkingTime}:00`
 
-let buttonActivation = false;
+let buttonRestart = false;
 let interval;
+
+function startAndStop(){
+    if(buttonRestart == false){
+        time = workingTime ? customizedWorkingTime * 60 - 1: customizedBreakTime * 60 - 1;
+        interval = setInterval(decreaseTime, 1000);
+        buttonRestart = true;
+        document.getElementById("classButton").className = "fa-solid fa-rotate-left";
+    }
+    else{
+        clearInterval(interval);
+        timer.innerText = `${customizedWorkingTime}:00`;
+        // Remettre le compteur à 0 et on recommence sur la partie travail
+        workingTime = true;
+        time = customizedWorkingTime * 60 - 1;
+        buttonRestart = false;
+        document.getElementById("classButton").className = "fa-solid fa-play";
+    }
+}
 
 function decreaseTime(){
 
@@ -26,25 +44,5 @@ function decreaseTime(){
     }
     else{
         time = time - 1;
-    }
-}
-
-let start = document.getElementById("start")
-start.addEventListener("click", startAndStop);
-
-function startAndStop(){
-    if(buttonActivation == false){
-        time = workingTime ? customizedWorkingTime * 60 : customizedBreakTime * 60 ;
-        interval = setInterval(decreaseTime, 1000);
-        buttonActivation = true;
-        document.getElementById("classButton").className = "fa-solid fa-rotate-left";
-    }
-    else{
-        clearInterval(interval);
-        // Remettre le compteur à 0 et on recommence sur la partie travail
-        workingTime = true;
-        time = customizedWorkingTime * 60;
-        buttonActivation = false;
-        document.getElementById("classButton").className = "fa-solid fa-play";
     }
 }
