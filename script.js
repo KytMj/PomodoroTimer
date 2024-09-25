@@ -53,10 +53,12 @@ function changeColor(){
     if(workingTime == true){
         document.getElementsByClassName("work")[0].style.backgroundColor = 'rgb(180, 20, 12)';
         document.getElementsByClassName("break")[0].style.backgroundColor = 'rgb(141, 8, 1)';
+        document.getElementsByClassName("container")[0].style.backgroundColor = 'rgb(180, 20, 12)';
     }
     else{
         document.getElementsByClassName("work")[0].style.backgroundColor = 'rgb(141, 8, 1)';
-        document.getElementsByClassName("break")[0].style.backgroundColor = 'rgb(180, 20, 12)';
+        document.getElementsByClassName("break")[0].style.backgroundColor = '#4f772d';
+        document.getElementsByClassName("container")[0].style.backgroundColor = '#4f772d';
     }
 }
 
