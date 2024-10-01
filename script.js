@@ -41,15 +41,16 @@ function decreaseTime(){
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
     timer.innerText = `${minutes}:${seconds}`;
-    if(time <= 0){
-        workingTime ? workingTime = false : workingTime = true;
-        time = workingTime ? customizedWorkingTime * 60 : customizedBreakingTime * 60 ;
+    if(time <= 0){ //switch to the break or the work time
+        workingTime ? workingTime = false : workingTime = true; 
+        time = workingTime ? customizedWorkingTime * 60 : customizedBreakingTime * 60 ; //puts the time back to maximum
     }
-    else{
+    else{ //or decrease the time
         time = time - 1;
     }
 }
 
+//changes the color of the work and pause menus
 function changeColor(){
     if(workingTime == true){
         document.getElementsByClassName("work")[0].style.backgroundColor = 'rgb(180, 20, 12)';
@@ -84,6 +85,7 @@ window.onclick = function(event) {
     }
 }
 
+//retrieves the values if the user change the work or the break time
 function valueRecup() {
     customizedWorkingTime = document.getElementById("formulary").elements["workTimeValue"].value;
     customizedBreakingTime = document.getElementById("formulary").elements["breakTimeValue"].value;
